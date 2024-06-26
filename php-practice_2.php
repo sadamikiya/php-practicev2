@@ -56,10 +56,9 @@ $personalInfos = [
       'tel'  => '09055556666'
   ],
 ];
-$num = 1;
-foreach ($personalInfos as $info) {
-  echo "{$num}番目の{$info['name']}のメールアドレスは{$info['mail']}で、電話番号は{$info['tel']}です。\n";
-  $num++;
+
+foreach ($personalInfos as $index => $info) {
+  echo ($index + 1) . "番目の{$info['name']}のメールアドレスは{$info['mail']}で、電話番号は{$info['tel']}です。\n";
 }
 
 Q2-3
@@ -82,9 +81,11 @@ $personalInfos = [
 ];
 
 $ageList = [25, 30, 18];
-foreach ($personalInfos as $key => &$status) {
-  $status['age'] = $ageList[$key];
+
+foreach ($ageList as $key => $age) {
+  $personalInfos[$key]['age'] = $age;
 }
+
 var_dump($personalInfos);
 
 // Q3 オブジェクト-1
@@ -139,13 +140,10 @@ $yamada->attend('PHP');
 
 // Q5 定義済みクラス
 Q5-1
-$today = new DateTime();
-$today->modify('-1 month');
-echo $today->format('Y-m-d');
+$today = (new DateTime())->modify('-1 month')->format('Y-m-d');
+echo $today;
 
 Q5-2
-$today = new DateTime();
-$pastDate = new DateTime('1992-04-25');
-$interval = $today->diff($pastDate);
-echo "あの日から" . $interval->days . "日経過しました。";
+echo 'あの日から' . (new DateTime())->diff(new DateTime('1992-04-25'))->format('%a') . '日経過しました。';
+
 ?>
