@@ -14,7 +14,7 @@ $message = "現在時刻は " . date('Y年m月d日H時i分s秒') . " です";
 echo $message;
 
 // Q4 条件分岐-1 if文
-$device = "windows";
+$device = "windows"; // これはテストのために変更できます
 $os = "どちらでもありません";
 
 if ($device == "windows") {
@@ -22,6 +22,8 @@ if ($device == "windows") {
 } else {
     if ($device == "mac") {
         $os = "mac";
+    } else {
+        $os = "どちらでもありません";
     }
 }
 
