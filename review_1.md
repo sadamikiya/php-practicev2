@@ -32,8 +32,8 @@
 - 文字の連なりを表現するデータ型。テキストデータの操作において必要であり、文字の結合（$newmessageを追加する場合$messageの前に追加で文字を追加できる）、また、文字列は''シングルクォーテーション（変数、特殊文字を展開する場合に使用）($name = '佐田';)、""ダブルクォーテーション（変数と特殊文字を使用しない場合に使用）（$message = "Hello{$name}";）で分けることもできる。そのほかにも部分文字の抽出、検索、置換などに使用される。
  
 - ブーリアン型（Boolean）: 
-- 真偽値を表すデータ型。if(条件式)により条件分岐turu（真）,false（偽）の該当するデータの値を取り出す。
- （$age = 18;var_dump($age >= 20; var_dump($age >=10);18   より大きい20はturu、小さい10はfalseとなる）他にも論理積（AND　両方turuの場合turuで返す）、論理和（OR　いずれかがturu の場合turuを返す）論理否定（NOT　条件が　turuの場合にfalseを返し、falseであればturuを返す）のような論理演算などを使用する
+- 真偽値を表すデータ型。if(条件式)により条件分岐true（真）,false（偽）の該当するデータの値を取り出す。
+ （$age = 18;var_dump($age >= 20; var_dump($age >=10);18   より大きい20はturu、小さい10はfalseとなる）他にも論理積（AND　両方trueの場合trueで返す）、論理和（OR　いずれかがtrue の場合trueを返す）論理否定（NOT　条件が　trueの場合にfalseを返し、falseであればtrueを返す）のような論理演算などを使用する
 
 ## ifで比較演算子を使用する場合の「==」と「===」の違いを説明してください。
 
@@ -41,14 +41,14 @@
  型が異なっていても値が等しければturuとなる。（$a ='5' $b = '5'
 if $a == $b ) 
 　
-- ===は厳密等価演算子という。型と値の両方が等しいときのみturuとなる。（$a ='5' $b = '5'
+- ===は厳密等価演算子という。型と値の両方が等しいときのみtrueとなる。（$a ='5' $b = '5'
 if $a === $b) では等しくない 
 
 ## 「配列」と「連想配列」の違いについて、「インデックス」「キー」「バリュー」という単語を使用して説明してください。
 - 配列（array）は各要素に対して数値のインデックスが自動で割り振られarray0から始まる。またキーとして機能する。各要素に格納されるデータをバリュー。($array = array("tea","coffee","miilk")echo $array[0](tea) echo $array[1](coffee) echo $array[2](milk) )
 
 - 連想配列(Associative array)は数値のインデックスを使用しない
-各要素に独自のキーを割り当てる。キーには文字列や数値が使用可能。各要素に格納されるデータがバリュー。($array = array("drink1" =>"tea","drink2" =>"coffee","drink3" =>"miilk")echo $assocarray["drink1"](tea) echo $assocarray["drink2"](coffee) echo $assocarray["drink3"](milk) )
+各要素に独自のキーを割り当てる。キーには文字列や数値が使用可能。各要素に格納されるデータがバリュー。($array = array("drink1" =>"tea","drink2" =>"coffee","drink3" =>"miilk")echo $assocarray["drink1"](tea) echo $assocarray["drink2"](coffee) echo $assocarray["drink3"](milk) ,配列名 = ［］；でも可能)
 
 ## foreachとはなにか、どんな時にしようするのか説明してください。
 - 配列や連想配列の各要素の最初から順に繰り返して処理を行う際に使用する。また、連想配列のキーとバリューのペアを順に処理したいとき、配列の要素を変更したいとき、配列の内容や構造を簡単に把握したいときなどに使用する。
